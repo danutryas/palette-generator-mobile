@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:palette_generator/widgets/bottom_nav_bar.dart';
+import 'package:palette_generator/widgets/navBar/bottom_nav_bar.dart';
 import 'package:palette_generator/constants/app_pages.dart';
+import 'package:palette_generator/widgets/tabBar/homepage_app_bar.dart';
+import 'package:palette_generator/widgets/tabBar/page_app_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +15,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Palette Generator',
+      theme: ThemeData(
+        fontFamily: "Lexend",
+        scaffoldBackgroundColor: Colors.grey[100],
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: Colors.grey[900]), // Primary text
+          bodyMedium: TextStyle(color: Colors.grey[600]), // Secondary text
+        ),
+      ),
       home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -35,11 +45,20 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  _getAppBar(int index) {
+    if (index == 0) {
+      return HomepageAppBar();
+    } else {
+      return PageAppBar(title: appPages[_selectedIndex].title);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: appPages[_selectedIndex],
+      appBar: _getAppBar(_selectedIndex),
+      body: appPages[_selectedIndex].page,
       bottomNavigationBar: BottomNavBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,

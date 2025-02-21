@@ -24,7 +24,7 @@ class BottomNavBar extends StatelessWidget {
                 color: Colors.transparent,
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.15),
+                    color: Colors.black.withValues(alpha: 0.10),
                     spreadRadius: 0,
                     blurRadius: 10,
                     offset: const Offset(0, 0),
@@ -44,7 +44,7 @@ class BottomNavBar extends StatelessWidget {
                       child: FaIcon(
                         FontAwesomeIcons.house,
                         size: 18,
-                        color: Colors.white,
+                        color: const Color(0xFFF5F5F5),
                       ),
                     ),
                     Padding(
@@ -52,7 +52,7 @@ class BottomNavBar extends StatelessWidget {
                       child: FaIcon(
                         FontAwesomeIcons.fileArrowUp,
                         size: 20,
-                        color: Colors.white,
+                        color: const Color(0xFFF5F5F5),
                       ),
                     ),
                     Padding(
@@ -60,7 +60,7 @@ class BottomNavBar extends StatelessWidget {
                       child: FaIcon(
                         FontAwesomeIcons.solidUser,
                         size: 18,
-                        color: Colors.white,
+                        color: const Color(0xFFF5F5F5),
                       ),
                     ),
                   ],
