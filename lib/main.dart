@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:palette_generator/widgets/navBar/bottom_nav_bar.dart';
-import 'package:palette_generator/constants/app_pages.dart';
+import 'package:palette_generator/models/app_pages.dart';
 import 'package:palette_generator/widgets/tabBar/homepage_app_bar.dart';
 import 'package:palette_generator/widgets/tabBar/page_app_bar.dart';
 
