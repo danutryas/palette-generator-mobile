@@ -34,6 +34,7 @@ class BottomNavBar extends StatelessWidget {
               child: ClipRRect(
                 clipBehavior: Clip.none,
                 child: CurvedNavigationBar(
+                  index: currentIndex,
                   backgroundColor: Colors.transparent,
                   color: const Color(0xFF212121),
                   buttonBackgroundColor: const Color(0xFF212121),

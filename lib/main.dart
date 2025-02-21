@@ -53,12 +53,18 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  _updateIndex(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
       appBar: _getAppBar(_selectedIndex),
-      body: appPages[_selectedIndex].page,
+      body: appPages[_selectedIndex].pageBuilder(_updateIndex),
       bottomNavigationBar: BottomNavBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
